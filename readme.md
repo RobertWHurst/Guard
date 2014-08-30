@@ -33,3 +33,12 @@ hello(1);
 //     at Function.Module._load (module.js:312:12)
 //     at Function.Module.runMain (module.js:497:10)
 ```
+
+# Docs
+
+## guard()
+
+```
+guard(string:key, *:val, string:type, [function:cb]) => undefined
+```
+The guard function accepts a key, the name of your argument, a value, the argument itself, and a type. An optional callback can be passed aswell. If a callback is passed then instead of throwing an error, the error will be passed to the callback. The supported types are `object`, `string`, `boolean`, `number`, `array`, `regexp`, `date`, `function`, `null`, and `undefined`.
