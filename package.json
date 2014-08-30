@@ -1,0 +1,21 @@
+{
+  "name": "guard",
+  "version": "0.0.0",
+  "description": "Guard is a type checker that aims to make type checking function arguments easier and more readable.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./test/*.js | tspec"
+  },
+  "keywords": [
+    "types",
+    "type-checking",
+    "util"
+  ],
+  "author": "Robert Hurst <robertwhurst@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "sinon": "^1.10.3",
+    "tap-spec": "^0.2.1",
+    "tape": "^2.14.0"
+  }
+}
