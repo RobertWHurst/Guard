@@ -1,6 +1,10 @@
 
 // modules
 var test = require('tape');
+var Stream = require('stream');
+var Readable = Stream.Readable;
+var Writable = Stream.Writable;
+var EventEmitter = require('events').EventEmitter;
 
 // libs
 var guard = require('../lib/guard');
@@ -33,9 +37,13 @@ test('guard.check()', function(t) {
     boolean: false,
     number: 0,
     array: [],
-    regexp: /regexp/,
+    regexp: /RegExp/,
     date: new Date(),
     'function': function() {},
+    'read-stream': new Readable(),
+    'write-stream': new Writable(),
+    stream: new Stream(),
+    emitter: new EventEmitter(),
     'null': null,
     'undefined': undefined
   };
