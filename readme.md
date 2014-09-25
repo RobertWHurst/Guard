@@ -3,8 +3,10 @@
 Guard
 =====
 
-Guard is a simple type checker that aims to make it easier to check the types
-of arguments or values in a function.
+Guard is a simple type checker function that aims to make it easier to check 
+the types of arguments or values in a function. When a guard finds an invalid
+value it throws an error. The error thrown has a modified stack trace that
+originates from where guard was called to make for easier debugging.
 
 ```
 npm install type-guard
@@ -39,6 +41,9 @@ hello(1);
 ## guard()
 
 ```
-guard(string:key, *:val, string:type, [function:cb]) => undefined
+guard(string:key, *:val, string:type) => undefined
 ```
-The guard function accepts a key, the name of your argument, a value, the argument itself, and a type. An optional callback can be passed aswell. If a callback is passed then instead of throwing an error, the error will be passed to the callback. The supported types are `object`, `string`, `boolean`, `number`, `array`, `regexp`, `date`, `function`, `null`, and `undefined`.
+The guard function accepts a key, the name of your argument, a value, the
+argument itself, and a type. The supported types are `object`, `string`,
+`boolean`, `number`, `array`, `regexp`, `date`, `function`, `null`, and
+`undefined`.

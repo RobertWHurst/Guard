@@ -13,6 +13,13 @@
   ],
   "author": "Robert Hurst <robertwhurst@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobertWHurst/Guard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:RobertWHurst/Guard.git"
+  },
   "devDependencies": {
     "sinon": "^1.10.3",
     "tap-spec": "^0.2.1",

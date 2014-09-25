@@ -22,14 +22,11 @@ test('guard.check()', function(t) {
     guard.check();
   }, 'throws on missing arguments');
   t.throws(function() {
-    guard.check(0, 'val', 'string');
+    guard.check(0, 'val');
   }, 'throws if key is not a string');
   t.throws(function() {
-    guard.check('key', 'val', 'foo');
+    guard.check('key', 'val');
   }, 'throws if type is not a supported guard type');
-  t.throws(function() {
-    guard.check('key', 'val', 'string', 'foo');
-  }, 'throws if cb is not a function');
 
   var typeMap = {
     object: {},
@@ -50,23 +47,27 @@ test('guard.check()', function(t) {
 
   for(var type in typeMap) {
     var val = typeMap[type];
-    guard.check(type, val, type, function(err) {
+    try {
+      guard.check(type, val, type);
+    } catch (err) {
       t.equal(
         err,
         null,
         'returns null for val ' + val + ' matching type ' + type
       );
-    });
+    }
   }
   for(var type in typeMap) {
-    guard.check(type, val, type, function(err) {
+    try {
+      guard.check(type, val, type);
+    } catch (err) {
       t.equal(
         err.constructor,
         GuardError,
         'returns a GuardError instance for val ' + val +
         ' expecting type ' + type
       );
-    });
+    }
     val = typeMap[type];
   }
 
