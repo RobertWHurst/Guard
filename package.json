@@ -1,6 +1,6 @@
 {
   "name": "type-guard",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Guard is a type checker that aims to make type checking function arguments easier and more readable.",
   "main": "index.js",
   "scripts": {
